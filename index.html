@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.css">
 </head>
 
 <body>
@@ -14,15 +15,34 @@
         <h2>Dark mode</h2>
     </header>
     <main>
-        <form action="">
-            <input type="text" placeholder="Search for a country...">
-        </form>
+        <section>
+            <form action="" id="form">
+
+                <input type="text" name="name" placeholder="Search for a country...">
+                <button><i class="fas fa-arrow-right"></i>
+            </button>
+
+            </form>
+            <div class="dropdown">
+                <!-- <button class="dropbtn">Filter by Region</button> -->
+
+                <select class="u-full-width" id="region">
+                    <option value="all">Filter by Region</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Americas">America</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Oceania">Oceania</option>
+                    
+                </select>
+            </div>
+        </section>
         <div class="countries" id="countries">
 
         </div>
 
     </main>
-    <script src="js/index.js"></script>
+    <script src="js/index2.js"></script>
 </body>
 
 </html>
