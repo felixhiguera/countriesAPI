@@ -87,10 +87,22 @@
         }
 
     }
+    async function cacheExist(category) {
+        const listName = category
+        const cacheList = window.localStorage.getItem(listName)
+        if (cacheList) {
+            return JSON.parse(cacheList);
+        }
+        const data = await getData(`${baseCountries}all`)
+        window.localStorage.setItem(listName, JSON.stringify(data))
+        return data;
+    }
 
 
     let $countries = document.querySelector('#countries');
-    let countries = await getData(`${baseCountries}all`)
+    // let countries = await getData(`${baseCountries}all`)
+    let countries = await cacheExist('countries')
+    window.localStorage.setItem('countries', JSON.stringify(countries))
     console.log(countries);
 
     function renderCountries(list, $container) {
